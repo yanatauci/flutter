@@ -1,23 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutta/sign_up.dart';
-import 'package:flutta/home.dart';
-import 'package:flutta/transaksi.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: 'Tokoku',
-    home: FirstRoute(),
-    initialRoute: '/',
-    routes: {
-      '/home': (context) => home(),
-      '/sign_up': (context) => sign_up(),
-      '/transaksi': (context) => transaksi(),
-    },
-  ));
-}
-
-class FirstRoute extends StatelessWidget {
-  const FirstRoute({super.key});
+class sign_up extends StatelessWidget {
+  const sign_up({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +17,7 @@ class FirstRoute extends StatelessWidget {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  'Tokoku Sign In',
+                  'Tokoku Sign Up',
                   style: TextStyle(
                       color: Colors.purple,
                       fontWeight: FontWeight.w500,
@@ -42,9 +26,18 @@ class FirstRoute extends StatelessWidget {
             Container(
                 alignment: Alignment.center,
                 child: const Text(
-                  'Sign In',
+                  'Sign Up',
                   style: TextStyle(fontSize: 20),
                 )),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: TextField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Name',
+                ),
+              ),
+            ),
             Container(
               padding: const EdgeInsets.all(10),
               child: TextField(
@@ -68,28 +61,8 @@ class FirstRoute extends StatelessWidget {
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                 child: ElevatedButton(
-                  child: const Text('Login'),
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/home');
-                  },
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.purple),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
-                      ),
-                    ),
-                  ),
-                )),
-            Container(
-                height: 50,
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-                child: ElevatedButton(
                   child: const Text('Daftar'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/sign_up');
-                  },
+                  onPressed: () {},
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all<Color>(Colors.purple),
