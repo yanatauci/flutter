@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutta/sign_up.dart';
 import 'package:flutta/home.dart';
 import 'package:flutta/transaksi.dart';
-;
+
 void main() {
   runApp(MaterialApp(
     title: 'Tokoku',
