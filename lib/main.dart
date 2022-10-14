@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutta/sign_up.dart';
 import 'package:flutta/home.dart';
 import 'package:flutta/transaksi.dart';
-
+;
 void main() {
   runApp(MaterialApp(
     title: 'Tokoku',
@@ -22,13 +22,15 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Tokoku'),
-        backgroundColor: Colors.purple,
-      ),
       body: Container(
-        child: ListView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Container(
+              child: Image.asset('assets/images/login.png'),
+              height: 250,
+              width: 250,
+            ),
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
@@ -37,13 +39,13 @@ class FirstRoute extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.purple,
                       fontWeight: FontWeight.w500,
-                      fontSize: 30),
+                      fontSize: 25),
                 )),
             Container(
                 alignment: Alignment.center,
                 child: const Text(
-                  'Sign In',
-                  style: TextStyle(fontSize: 20),
+                  'Silakan masuk terlebih dahulu',
+                  style: TextStyle(fontSize: 15),
                 )),
             Container(
               padding: const EdgeInsets.all(10),
@@ -66,6 +68,7 @@ class FirstRoute extends StatelessWidget {
             ),
             Container(
                 height: 50,
+                width: 400,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
                 child: ElevatedButton(
                   child: const Text('Login'),
@@ -83,22 +86,25 @@ class FirstRoute extends StatelessWidget {
                   ),
                 )),
             Container(
-                height: 50,
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-                child: ElevatedButton(
-                  child: const Text('Daftar'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/sign_up');
-                  },
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.purple),
-                      //rounded button
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                              side: BorderSide(color: Colors.purple)))),
-                )),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Belum punya akun?'),
+                  TextButton(
+                    child: const Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.purple,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/sign_up');
+                    },
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
