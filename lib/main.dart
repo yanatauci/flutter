@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutta/sign_up.dart';
 import 'package:flutta/home.dart';
 import 'package:flutta/transaksi.dart';
+import 'package:flutta/form.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -12,6 +13,7 @@ void main() {
       '/home': (context) => home(),
       '/sign_up': (context) => sign_up(),
       '/transaksi': (context) => transaksi(),
+      '/form': (context) => form(),
     },
   ));
 }

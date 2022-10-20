@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class sign_up extends StatefulWidget {
-  const sign_up({super.key});
+class form extends StatefulWidget {
+  const form({super.key});
 
   @override
-  State<sign_up> createState() => _sign_upState();
+  State<form> createState() => _formState();
 }
 
-class _sign_upState extends State<sign_up> {
+class _formState extends State<form> {
   final _formkey = GlobalKey<FormState>();
   bool nilaichekbox = false;
   //list string agama
@@ -40,14 +40,14 @@ class _sign_upState extends State<sign_up> {
                   alignment: Alignment.center,
                   padding: const EdgeInsets.all(10),
                   child: const Text(
-                    'Tokoku Register',
+                    'Tokoku Form',
                     style: TextStyle(
                         color: Colors.purple,
                         fontWeight: FontWeight.w500,
                         fontSize: 30),
                   )),
               Container(
-                padding: const EdgeInsets.all(5),
+                padding: const EdgeInsets.all(10),
               ),
               TextFormField(
                 controller: nama,
